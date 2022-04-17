@@ -4,12 +4,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from apps.books.views import BookViewSet, BookCategoryViewSet
+from apps.study.views import BookViewSet, BookCategoryViewSet, ReadingViewSet
 
 # Routers
 router = DefaultRouter()
 router.register("books", BookViewSet)
 router.register("bookCategories", BookCategoryViewSet)
+router.register("readings", ReadingViewSet)
 
 scheme_view = get_swagger_view(title="Abdusamad Malikov API")
 

@@ -13,7 +13,7 @@ class BookCategory(models.Model):
 
 
 STATUS_BOOK = (
-    ('read', 'read'),
+    ('read', 'Read'),
     ('reading', 'Reading'),
     ('will read', 'Read later')
 )
@@ -34,3 +34,25 @@ class Book(models.Model):
         ordering = ('added',)
         verbose_name = 'book'
         verbose_name_plural = 'Books'
+
+
+TYPE_READING = (
+    ('blog', 'blog'),
+    ('article', 'article')
+)
+
+
+class Reading(models.Model):
+    type = models.CharField(choices=TYPE_READING, max_length=7)
+    name = models.CharField(max_length=255)
+    description = models.CharField(max_length=500)
+    link = models.URLField()
+    added = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ('-added',)
+        verbose_name = 'Reading'
+        verbose_name_plural = 'Reading'
+
+    def __str__(self):
+        return self.name

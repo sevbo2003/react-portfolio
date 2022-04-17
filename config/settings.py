@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'ckeditor',
 
     # local
-    'apps.books.apps.BooksConfig',
+    'apps.study.apps.StudyConfig',
 ]
 
 MIDDLEWARE = [
