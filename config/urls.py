@@ -3,6 +3,7 @@ from rest_framework_swagger.views import get_swagger_view
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
+from .routers import urlpatterns as router_urls
 
 scheme_view = get_swagger_view(title="Abdusamad Malikov API")
 
@@ -14,9 +15,7 @@ urlpatterns = [
 ]
 
 # local apps include
-urlpatterns += [
-    path('', include('apps.study.urls')),
-]
+urlpatterns += router_urls
 
 # media and static urls
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

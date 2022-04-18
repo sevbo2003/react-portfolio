@@ -36,7 +36,8 @@ INSTALLED_APPS = [
 
     # local
     'apps.study.apps.StudyConfig',
-    'apps.devices.apps.DevicesConfig'
+    'apps.devices.apps.DevicesConfig',
+    'apps.entertainment.apps.EntertainmentConfig',
 ]
 
 MIDDLEWARE = [
