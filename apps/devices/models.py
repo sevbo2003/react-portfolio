@@ -32,3 +32,17 @@ class Accessories(models.Model):
 
     def __str__(self):
         return self.type
+
+
+class Development(models.Model):
+    type = models.CharField(max_length=80)
+    name = models.CharField(max_length=100)
+    url = models.URLField()
+    active = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name = 'Development tool'
+        verbose_name_plural = 'Development tools'
+
+    def __str__(self):
+        return self.type

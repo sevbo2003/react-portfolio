@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import MySetup, DailyUses, Accessories
+from .models import MySetup, DailyUses, Accessories, Development
 
 
 class MySetupSerializers(serializers.ModelSerializer):
@@ -17,4 +17,10 @@ class DailyUsesSerializer(serializers.ModelSerializer):
 class AccessoriesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Accessories
+        fields = '__all__'
+
+
+class DevelopmentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Development
         fields = '__all__'
