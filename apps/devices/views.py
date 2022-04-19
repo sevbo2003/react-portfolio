@@ -1,6 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
-from .models import MySetup, DailyUses, Accessories, Development
-from .serializers import MySetupSerializers, DailyUsesSerializer, AccessoriesSerializer, DevelopmentSerializer
+from .models import MySetup, DailyUses, Accessories, Development, Keyboard
+from .serializers import MySetupSerializers, DailyUsesSerializer, AccessoriesSerializer, DevelopmentSerializer, \
+    KeyboardSerializer
 
 
 class MySetupViewSetup(ModelViewSet):
@@ -21,3 +22,8 @@ class AccessoriesViewSet(ModelViewSet):
 class DevelopmentViewSet(ModelViewSet):
     queryset = Development.objects.filter(active=True)
     serializer_class = DevelopmentSerializer
+
+
+class KeyboardViewSet(ModelViewSet):
+    queryset = Keyboard.objects.all()
+    serializer_class = KeyboardSerializer

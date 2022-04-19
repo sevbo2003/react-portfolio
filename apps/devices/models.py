@@ -46,3 +46,23 @@ class Development(models.Model):
 
     def __str__(self):
         return self.type
+
+
+class Keyboard(models.Model):
+    image = models.ImageField(upload_to='keyboards')
+    url = models.URLField()
+    name = models.CharField(max_length=100)
+    description = models.CharField(max_length=100)
+    added = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = 'keyboard'
+        verbose_name_plural = 'Keyboards'
+        ordering = ('-added',)
+
+    @property
+    def image_url(self):
+        return self.image.url
+
+    def __str__(self):
+        return self.name

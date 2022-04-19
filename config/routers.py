@@ -1,6 +1,7 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from apps.devices.views import MySetupViewSetup, DailyUsesViewSet, AccessoriesViewSet, DevelopmentViewSet
+from apps.devices.views import MySetupViewSetup, DailyUsesViewSet, AccessoriesViewSet, DevelopmentViewSet, \
+    KeyboardViewSet
 from apps.entertainment.views import MusicViewSet, GalleryViewSet
 from apps.study.views import (
     BookViewSet,
@@ -24,5 +25,6 @@ router.register("my-setup", MySetupViewSetup)
 router.register("daily-uses", DailyUsesViewSet)
 router.register("accessories", AccessoriesViewSet)
 router.register("development-tools", DevelopmentViewSet)
+router.register("keyboards", KeyboardViewSet)
 
 urlpatterns = [path("", include(router.urls))]
