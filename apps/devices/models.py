@@ -1,3 +1,6 @@
 from django.db import models
 
-# Create your models here.
+
+class MySetup(models.Model):
+    image = models.ImageField(upload_to='my-current-setup')
+    active = models.BooleanField(default=True)
