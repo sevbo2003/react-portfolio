@@ -1,6 +1,7 @@
 from rest_framework import viewsets
-from .models import Book, BookCategory, Reading, Podcast, Talk
-from .serializers import BookSerializer, BookCategorySerializer, ReadingSerializer, PodcastSerializers, TalkSerializer
+from .models import Book, BookCategory, Reading, Podcast, Talk, Tutorial
+from .serializers import BookSerializer, BookCategorySerializer, ReadingSerializer, PodcastSerializers, TalkSerializer, \
+    TutorialSerializer
 
 
 class BookViewSet(viewsets.ModelViewSet):
@@ -26,3 +27,8 @@ class PodcastViewSet(viewsets.ModelViewSet):
 class TalkViewSet(viewsets.ModelViewSet):
     queryset = Talk.objects.all()
     serializer_class = TalkSerializer
+
+
+class TutorialViewSet(viewsets.ModelViewSet):
+    queryset = Tutorial.objects.all()
+    serializer_class = TutorialSerializer
