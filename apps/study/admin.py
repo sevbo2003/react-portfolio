@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Book, BookCategory, Reading, Podcast
+from .models import Book, BookCategory, Reading, Podcast, Talk
 
 admin.site.register(BookCategory)
 
@@ -24,3 +24,10 @@ class PodcastAdmin(admin.ModelAdmin):
     list_filter = ('added',)
     search_fields = ('name',)
     search_help_text = 'Search by name'
+
+
+@admin.register(Talk)
+class TalkAdmin(admin.ModelAdmin):
+    list_display = ('name', 'author', 'image_link', 'time',)
+    list_filter = ('added',)
+    search_fields = ('name', 'description')

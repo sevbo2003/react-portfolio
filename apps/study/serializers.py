@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import BookCategory, Book, Reading, Podcast
+from .models import BookCategory, Book, Reading, Podcast, Talk
 
 
 class BookSerializer(serializers.ModelSerializer):
@@ -24,3 +24,9 @@ class PodcastSerializers(serializers.ModelSerializer):
     class Meta:
         model = Podcast
         fields = "__all__"
+
+
+class TalkSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Talk
+        fields = ('id', 'name', 'description', 'author', 'image_link', 'link', 'time')

@@ -66,5 +66,34 @@ class Podcast(models.Model):
     def __str__(self):
         return self.name
 
+    @property
+    def time(self):
+        time = self.added
+        return time.strftime("%B %-d, %Y")
+
+    class Meta:
+        ordering = ('-added',)
+
+
+class Talk(models.Model):
+    name = models.CharField(max_length=200)
+    description = models.CharField(max_length=500)
+    author = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='talk-images')
+    link = models.URLField()
+    added = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
+    @property
+    def image_link(self):
+        return self.image.url
+
+    @property
+    def time(self):
+        time = self.added
+        return time.strftime("%B %-d, %Y")
+
     class Meta:
         ordering = ('-added',)
