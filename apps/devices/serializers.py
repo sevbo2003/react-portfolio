@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import MySetup, DailyUses, Accessories, Development, Keyboard
+from .models import MySetup, DailyUses, Accessories, Development, Keyboard, Template
 
 
 class MySetupSerializers(serializers.ModelSerializer):
@@ -29,4 +29,10 @@ class DevelopmentSerializer(serializers.ModelSerializer):
 class KeyboardSerializer(serializers.ModelSerializer):
     class Meta:
         model = Keyboard
+        fields = ('id', 'name', 'description', 'image_url', 'image', 'url',)
+
+
+class TemplateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Template
         fields = ('id', 'name', 'description', 'image_url', 'image', 'url',)

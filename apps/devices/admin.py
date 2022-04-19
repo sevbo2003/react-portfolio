@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import MySetup, DailyUses, Accessories, Development, Keyboard
+from .models import MySetup, DailyUses, Accessories, Development, Keyboard, Template
 
 admin.site.register(MySetup)
 
@@ -26,6 +26,14 @@ class DailyUsesAdmin(admin.ModelAdmin):
 
 
 @admin.register(Keyboard)
+class DailyUsesAdmin(admin.ModelAdmin):
+    list_display = ('name', 'added')
+    list_filter = ('added',)
+    search_fields = ('name', 'description')
+    search_help_text = 'Search by name'
+
+
+@admin.register(Template)
 class DailyUsesAdmin(admin.ModelAdmin):
     list_display = ('name', 'added')
     list_filter = ('added',)
