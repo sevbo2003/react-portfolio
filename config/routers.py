@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from apps.entertainment.views import MusicViewSet
+from apps.entertainment.views import MusicViewSet, GalleryViewSet
 from apps.study.views import (
     BookViewSet,
     BookCategoryViewSet,
@@ -18,5 +18,6 @@ router.register("podcasts", PodcastViewSet)
 router.register("talks", TalkViewSet)
 router.register("tutorials", TutorialViewSet)
 router.register("musics", MusicViewSet)
+router.register("gallery", GalleryViewSet)
 
 urlpatterns = [path("", include(router.urls))]
