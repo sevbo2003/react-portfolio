@@ -12,6 +12,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),  # admin panel
     path("api/", scheme_view),  # api swagger view
     path("api-auth/", include("rest_framework.urls")),  # api registration
+    path("ckeditor/", include('ckeditor_uploader.urls'))  # ckeditor url
 ]
 
 # local apps include

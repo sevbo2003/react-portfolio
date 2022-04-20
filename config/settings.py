@@ -131,9 +131,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = 'static'
 
 MEDIA_URL = 'media-kal/'
 MEDIA_ROOT = BASE_DIR / 'media'
+CKEDITOR_UPLOAD_PATH = 'uploads/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
