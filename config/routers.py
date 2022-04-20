@@ -1,5 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
+from apps.blog.views import PostViewSet, CategoryViewSet
 from apps.devices.views import (
     MySetupViewSetup,
     DailyUsesViewSet,
@@ -38,5 +39,9 @@ router.register("accessories", AccessoriesViewSet)
 router.register("development-tools", DevelopmentViewSet)
 router.register("keyboards", KeyboardViewSet)
 router.register("website-templates", TemplateViewSet)
+
+# blog
+router.register('posts', PostViewSet)
+router.register('post-categories', CategoryViewSet)
 
 urlpatterns = [path("", include(router.urls))]
