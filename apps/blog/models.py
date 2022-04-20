@@ -37,3 +37,27 @@ class Post(models.Model):
         ordering = ('-created',)
         verbose_name = 'post'
         verbose_name_plural = 'Posts'
+
+
+class Project(models.Model):
+    title = models.CharField(max_length=256)
+    description = models.CharField(max_length=500)
+    body = RichTextField()
+    image = models.ImageField(upload_to='project-images', blank=True, null=True)
+    created = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField()
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super(Project, self).save(*args, **kwargs)
+
+    @property
+    def time(self):
+        time = self.created
+        return time.strftime("%B %-d, %Y")
+
+    class Meta:
+        ordering = ('-created',)
+        verbose_name = 'projects'
+        verbose_name_plural = 'Projects'

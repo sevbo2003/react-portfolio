@@ -1,5 +1,5 @@
-from .serializers import PostSerializer, CategorySerializer
-from .models import Post, Category
+from .serializers import PostSerializer, CategorySerializer, ProjectSerializer
+from .models import Post, Category, Project
 from rest_framework.viewsets import ModelViewSet
 
 
@@ -11,3 +11,8 @@ class PostViewSet(ModelViewSet):
 class CategoryViewSet(ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+
+
+class ProjectViewSet(ModelViewSet):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
