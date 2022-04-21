@@ -94,7 +94,7 @@ else:
             'USER': os.getenv('USER'),
             'PASSWORD': os.getenv('PASSWORD'),
             'HOST': '139.59.253.7',
-            'PORT': '',
+            'PORT': '5432',
         }
     }
 
