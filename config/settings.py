@@ -91,9 +91,9 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': os.getenv('NAME'),
-            'USER': os.getenv('USER'),
-            'PASSWORD': os.getenv('PASSWORD'),
-            'HOST': 'localhost',
+            'USER': 'admin_blog',
+            'PASSWORD': 'testing123',
+            'HOST': '127.0.0.1',
             'PORT': '5432',
         }
     }
