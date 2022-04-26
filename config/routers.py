@@ -1,6 +1,12 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from apps.blog.views import PostViewSet, CategoryViewSet, ProjectViewSet
+from apps.blog.views import (
+    PostViewSet,
+    CategoryViewSet,
+    ProjectViewSet,
+    ChallengeNameViewSet,
+    Day30ViewSet,
+)
 from apps.devices.views import (
     MySetupViewSetup,
     DailyUsesViewSet,
@@ -41,10 +47,14 @@ router.register("keyboards", KeyboardViewSet)
 router.register("website-templates", TemplateViewSet)
 
 # blog
-router.register('posts', PostViewSet)
-router.register('post-categories', CategoryViewSet)
+router.register("posts", PostViewSet)
+router.register("post-categories", CategoryViewSet)
 
 # projects
-router.register('projects', ProjectViewSet)
+router.register("projects", ProjectViewSet)
+
+# 30 Day Challenge
+router.register('challenge-name', ChallengeNameViewSet)
+router.register('day-30', Day30ViewSet)
 
 urlpatterns = [path("", include(router.urls))]

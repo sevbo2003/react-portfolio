@@ -61,3 +61,39 @@ class Project(models.Model):
         ordering = ('-created',)
         verbose_name = 'projects'
         verbose_name_plural = 'Projects'
+
+
+class ChallengeName(models.Model):
+    challenge = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.challenge
+
+
+class Day30(models.Model):
+    title = models.CharField(max_length=256)
+    challenge = models.ForeignKey(ChallengeName, on_delete=models.CASCADE)
+    day = models.IntegerField()
+    description = models.CharField(max_length=500)
+    body = RichTextField()
+    created = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField()
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super(Day30, self).save(*args, **kwargs)
+
+    @property
+    def time(self):
+        time = self.created
+        return time.strftime("%B %-d, %Y")
+
+    @property
+    def url(self):
+        return self.slug + '-' + f'day{self.day}'
+
+    class Meta:
+        ordering = ('-created',)
+        verbose_name = '30 day'
+        verbose_name_plural = '30 Day challenge'
