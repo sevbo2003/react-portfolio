@@ -29,7 +29,7 @@ class DevelopmentSerializer(serializers.ModelSerializer):
 class KeyboardSerializer(serializers.ModelSerializer):
     class Meta:
         model = Keyboard
-        fields = ('id', 'name', 'description', 'image_url', 'image', 'url',)
+        fields = '__all__'
 
 
 class TemplateSerializer(serializers.ModelSerializer):
