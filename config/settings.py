@@ -133,7 +133,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = 'static'
 
-MEDIA_URL = 'media-kal/'
+MEDIA_URL = 'media'
 MEDIA_ROOT = BASE_DIR / 'media'
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 
