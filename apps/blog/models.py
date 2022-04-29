@@ -42,7 +42,7 @@ class Post(models.Model):
 class Project(models.Model):
     title = models.CharField(max_length=256)
     description = models.CharField(max_length=500)
-    body = RichTextField()
+    url = models.URLField()
     image = models.ImageField(upload_to='project-images', blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField()
