@@ -75,7 +75,7 @@ class Day30(models.Model):
     challenge = models.ForeignKey(ChallengeName, on_delete=models.CASCADE)
     day = models.IntegerField()
     description = models.CharField(max_length=500)
-    body = RichTextField()
+    body = models.FileField()
     created = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField()
 
