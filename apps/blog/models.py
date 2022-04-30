@@ -18,7 +18,7 @@ class Post(models.Model):
     title = models.CharField(max_length=255)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     description = models.CharField(max_length=500)
-    body = RichTextField()
+    body = models.FileField()
     image = models.ImageField(upload_to='post-images', blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField()
