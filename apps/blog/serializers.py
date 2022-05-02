@@ -17,7 +17,7 @@ class CategorySerializer(serializers.ModelSerializer):
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
-        fields = ('id', 'title', 'description', 'body', 'image', 'created', 'time', 'slug')
+        fields = ('id', 'title', 'description', 'image', 'created', 'time', 'slug')
 
 
 class ChallengeNameSerializer(serializers.ModelSerializer):
