@@ -3,9 +3,11 @@ from .models import BookCategory, Book, Reading, Podcast, Talk, Tutorial
 
 
 class BookSerializer(serializers.ModelSerializer):
+    category_name = serializers.ReadOnlyField(source='category.category')
+
     class Meta:
         model = Book
-        fields = '__all__'
+        fields = ['id', 'category_name', 'name', 'description', 'status', 'link', 'added']
 
 
 class BookCategorySerializer(serializers.ModelSerializer):

@@ -31,7 +31,7 @@ class Book(models.Model):
         return self.name
 
     class Meta:
-        ordering = ('added',)
+        ordering = ('-added',)
         verbose_name = 'book'
         verbose_name_plural = 'Books'
 
