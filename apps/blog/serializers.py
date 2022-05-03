@@ -5,7 +5,7 @@ from .models import Category, Post, Project, ChallengeName, Day30
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ('id', 'title', 'category', 'description', 'body', 'image', 'created', 'time', 'slug')
+        fields = '__all__'
 
 
 class CategorySerializer(serializers.ModelSerializer):

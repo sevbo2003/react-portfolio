@@ -37,4 +37,4 @@ class TalkSerializer(serializers.ModelSerializer):
 class TutorialSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tutorial
-        fields = ('id', 'name', 'description', 'author', 'category', 'image_link', 'link', 'time')
+        fields = ('id', 'name', 'description', 'author', 'category', 'link', 'time')

@@ -16,9 +16,6 @@ class Category(models.Model):
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    description = models.CharField(max_length=500)
-    body = models.FileField()
     image = models.ImageField(upload_to='post-images', blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField()
@@ -27,11 +24,6 @@ class Post(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         super(Post, self).save(*args, **kwargs)
-
-    @property
-    def time(self):
-        time = self.created
-        return time.strftime("%B %-d, %Y")
 
     class Meta:
         ordering = ('-created',)

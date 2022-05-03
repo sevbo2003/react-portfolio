@@ -104,16 +104,11 @@ class Tutorial(models.Model):
     description = models.CharField(max_length=500)
     author = models.CharField(max_length=50)
     category = models.CharField(max_length=30)
-    image = models.ImageField(upload_to='talk-images')
     link = models.URLField()
     added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name
-
-    @property
-    def image_link(self):
-        return self.image.url
 
     @property
     def time(self):
