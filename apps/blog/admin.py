@@ -7,9 +7,7 @@ admin.site.register(ChallengeName)
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'category', 'time')
-    list_filter = ('category', 'created')
-    search_fields = ('name', 'description')
+    list_display = ('title', 'created')
     prepopulated_fields = {'slug': ('title',)}
 
 

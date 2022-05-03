@@ -44,7 +44,6 @@ class TutorialAdmin(admin.ModelAdmin):
         "name",
         "author",
         "category",
-        "image_link",
         "time",
     )
     list_filter = ("added",)
