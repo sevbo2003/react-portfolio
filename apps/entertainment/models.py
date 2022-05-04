@@ -5,6 +5,7 @@ class Music(models.Model):
     name = models.CharField(max_length=100)
     author = models.CharField(max_length=40)
     length = models.FloatField()
+    image = models.ImageField(upload_to='music-images')
     link = models.URLField()
     added = models.DateTimeField(auto_now_add=True)
 
