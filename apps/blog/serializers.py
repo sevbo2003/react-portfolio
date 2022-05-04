@@ -17,7 +17,8 @@ class CategorySerializer(serializers.ModelSerializer):
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
-        fields = ('id', 'title', 'description', 'image', 'created', 'time', 'slug')
+        fields = ('id', 'title', 'description', 'image',
+                  'url', 'created', 'time', 'slug')
 
 
 class ChallengeNameSerializer(serializers.ModelSerializer):
@@ -31,4 +32,5 @@ class Day30Serializer(serializers.ModelSerializer):
 
     class Meta:
         model = Day30
-        fields = ('id', 'title', 'challenge', 'day', 'description', 'body', 'created', 'time', 'slug', 'url')
+        fields = ('id', 'title', 'challenge', 'day', 'description',
+                  'body', 'created', 'time', 'slug', 'url')
