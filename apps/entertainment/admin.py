@@ -4,8 +4,8 @@ from .models import Music, Gallery
 
 @admin.register(Music)
 class MusicAdmin(admin.ModelAdmin):
-    list_display = ('name', 'author', 'length', 'added')
-    list_filter = ('length', 'added')
+    list_display = ('name', 'author', 'added')
+    list_filter = ('added',)
     search_fields = ('name', 'author')
 
 

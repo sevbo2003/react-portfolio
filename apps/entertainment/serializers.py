@@ -5,7 +5,7 @@ from .models import Music, Gallery
 class MusicSerializer(serializers.ModelSerializer):
     class Meta:
         model = Music
-        fields = ('id', 'name', 'author', 'image', 'length', 'uzunligi', 'link', 'added')
+        fields = ('id', 'name', 'author', 'image', 'link', 'added')
 
 
 class GallerySerializer(serializers.ModelSerializer):
