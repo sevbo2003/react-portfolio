@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 
 
 class Music(models.Model):
@@ -17,11 +18,12 @@ class Music(models.Model):
         verbose_name_plural = 'Musics'
 
 
-class Gallery(models.Model):
-    name = models.CharField(max_length=200)
-    image = models.URLField()
-    download_link = models.URLField()
-    size = models.FloatField()
+class Design(models.Model):
+    name = models.CharField(max_length=210)
+    description = models.CharField(max_length=500)
+    author = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='design-images')
+    link = models.URLField()
     added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -32,11 +34,5 @@ class Gallery(models.Model):
         time = self.added
         return time.strftime("%B %-d, %Y")
 
-    @property
-    def image_size(self):
-        return str(self.size) + ' mb'
-
     class Meta:
         ordering = ('-added',)
-        verbose_name = 'image'
-        verbose_name_plural = 'Gallery'

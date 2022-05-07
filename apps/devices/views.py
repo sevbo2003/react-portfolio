@@ -1,12 +1,12 @@
 from rest_framework.viewsets import ModelViewSet
-from .models import MySetup, DailyUses, Accessories, Development, Keyboard, Template
+from .models import MySetup, DailyUses, Accessories, Development, Keyboard, Link
 from .serializers import (
     MySetupSerializers,
     DailyUsesSerializer,
     AccessoriesSerializer,
     DevelopmentSerializer,
     KeyboardSerializer,
-    TemplateSerializer,
+    LinkSerializer,
 )
 
 
@@ -35,6 +35,6 @@ class KeyboardViewSet(ModelViewSet):
     serializer_class = KeyboardSerializer
 
 
-class TemplateViewSet(ModelViewSet):
-    queryset = Template.objects.all()
-    serializer_class = TemplateSerializer
+class LinkViewSet(ModelViewSet):
+    queryset = Link.objects.all()
+    serializer_class = LinkSerializer

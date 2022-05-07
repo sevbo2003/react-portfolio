@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import MySetup, DailyUses, Accessories, Development, Keyboard, Template
+from .models import MySetup, DailyUses, Accessories, Development, Keyboard, Link
 
 
 class MySetupSerializers(serializers.ModelSerializer):
@@ -32,7 +32,7 @@ class KeyboardSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class TemplateSerializer(serializers.ModelSerializer):
+class LinkSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Template
-        fields = ('id', 'name', 'description', 'image_url', 'image', 'url',)
+        model = Link
+        fields = "__all__"

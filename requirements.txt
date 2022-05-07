@@ -12,6 +12,7 @@ cssselect2==0.6.0
 Django==4.0.4
 django-ckeditor==6.4.0
 django-cors-headers==3.11.0
+django-environ==0.8.1
 django-js-asset==2.0.0
 django-rest-swagger==2.2.0
 djangorestframework==3.13.1

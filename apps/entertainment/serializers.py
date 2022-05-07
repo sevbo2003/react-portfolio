@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Music, Gallery
+from .models import Music, Design
 
 
 class MusicSerializer(serializers.ModelSerializer):
@@ -8,7 +8,7 @@ class MusicSerializer(serializers.ModelSerializer):
         fields = ('id', 'name', 'author', 'image', 'link', 'added')
 
 
-class GallerySerializer(serializers.ModelSerializer):
+class DesignSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Gallery
-        fields = ('id', 'name', 'image', 'download_link', 'image_size', 'time')
+        model = Design
+        fields = ('id', 'name', 'description', 'author', 'image', 'link', 'time')

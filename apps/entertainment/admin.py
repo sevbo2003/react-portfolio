@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Music, Gallery
+from .models import Music, Design
 
 
 @admin.register(Music)
@@ -9,7 +9,7 @@ class MusicAdmin(admin.ModelAdmin):
     search_fields = ('name', 'author')
 
 
-@admin.register(Gallery)
+@admin.register(Design)
 class GalleryAdmin(admin.ModelAdmin):
-    list_display = ('name', 'added', 'time', 'size')
-    search_fields = ('name',)
+    list_display = ('name', 'time', 'author',)
+    search_fields = ('time', 'author',)

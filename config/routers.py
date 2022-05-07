@@ -13,9 +13,9 @@ from apps.devices.views import (
     AccessoriesViewSet,
     DevelopmentViewSet,
     KeyboardViewSet,
-    TemplateViewSet,
+    LinkViewSet,
 )
-from apps.entertainment.views import MusicViewSet, GalleryViewSet
+from apps.entertainment.views import MusicViewSet, DesignViewSet
 from apps.study.views import (
     BookViewSet,
     BookCategoryViewSet,
@@ -36,7 +36,7 @@ router.register("tutorials", TutorialViewSet)
 
 # entertainment
 router.register("musics", MusicViewSet)
-router.register("gallery", GalleryViewSet)
+router.register("design", DesignViewSet)
 
 # devices
 router.register("my-setup", MySetupViewSetup)
@@ -44,7 +44,7 @@ router.register("daily-uses", DailyUsesViewSet)
 router.register("accessories", AccessoriesViewSet)
 router.register("development-tools", DevelopmentViewSet)
 router.register("keyboards", KeyboardViewSet)
-router.register("website-templates", TemplateViewSet)
+router.register("links", LinkViewSet)
 
 # blog
 router.register("posts", PostViewSet)

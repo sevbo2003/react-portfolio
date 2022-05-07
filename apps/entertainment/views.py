@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .models import Music, Gallery
-from .serializers import MusicSerializer, GallerySerializer
+from .models import Music, Design
+from .serializers import MusicSerializer, DesignSerializer
 
 
 class MusicViewSet(viewsets.ModelViewSet):
@@ -8,6 +8,6 @@ class MusicViewSet(viewsets.ModelViewSet):
     serializer_class = MusicSerializer
 
 
-class GalleryViewSet(viewsets.ModelViewSet):
-    queryset = Gallery.objects.all()
-    serializer_class = GallerySerializer
+class DesignViewSet(viewsets.ModelViewSet):
+    queryset = Design.objects.all()
+    serializer_class = DesignSerializer
