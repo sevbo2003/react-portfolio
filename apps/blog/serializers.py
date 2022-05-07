@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Category, Post, Project, ChallengeName, Day30
+from .models import Category, Post, Project, ChallengeName, Day30, Thanks
 
 
 class PostSerializer(serializers.ModelSerializer):
@@ -34,3 +34,9 @@ class Day30Serializer(serializers.ModelSerializer):
         model = Day30
         fields = ('id', 'title', 'challenge', 'day', 'description',
                   'body', 'created', 'time', 'slug', 'url')
+
+
+class ThanksSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Thanks
+        fields = '__all__'

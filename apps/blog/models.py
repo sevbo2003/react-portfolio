@@ -88,3 +88,18 @@ class Day30(models.Model):
         ordering = ('-created',)
         verbose_name = '30 day'
         verbose_name_plural = '30 Day challenge'
+
+
+class Thanks(models.Model):
+    name = models.CharField(max_length=100)
+    url = models.URLField()
+    added = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ['-added']
+        verbose_name = 'thanks'
+        verbose_name_plural = 'Thanks'
+

@@ -6,6 +6,7 @@ from apps.blog.views import (
     ProjectViewSet,
     ChallengeNameViewSet,
     Day30ViewSet,
+    ThanksViewSet
 )
 from apps.devices.views import (
     MySetupViewSetup,
@@ -56,5 +57,8 @@ router.register("projects", ProjectViewSet)
 # 30 Day Challenge
 router.register('challenge-name', ChallengeNameViewSet)
 router.register('day-30', Day30ViewSet)
+
+# other
+router.register('thanks', ThanksViewSet)
 
 urlpatterns = [path("", include(router.urls))]
